@@ -1,0 +1,608 @@
+<!DOCTYPE html>  <html lang="en">  <head>  <meta charset="UTF-8">  
+
+<meta name="viewport"  
+      content="width=device-width, initial-scale=1.0">  
+
+<title>  
+    BloodCare - Blood Group & Blood Level Guide  
+</title>  
+
+
+<style>  
+
+    * {  
+        box-sizing: border-box;  
+        margin: 0;  
+        padding: 0;  
+    }  
+
+
+    body {  
+        font-family: Arial, Helvetica, sans-serif;  
+        background: #f7f8fa;  
+        color: #222;  
+        line-height: 1.6;  
+    }  
+
+
+    /* HEADER */  
+
+    header {  
+        background: linear-gradient(  
+            135deg,  
+            #a90000,  
+            #e63946  
+        );  
+
+        color: white;  
+
+        text-align: center;  
+
+        padding: 55px 20px;  
+    }  
+
+
+    header h1 {  
+        font-size: 42px;  
+        margin-bottom: 10px;  
+    }  
+
+
+    header p {  
+        font-size: 18px;  
+    }  
+
+
+    /* MAIN CONTAINER */  
+
+    .container {  
+        max-width: 1050px;  
+        margin: auto;  
+        padding: 35px 20px;  
+    }  
+
+
+    /* SECTION TITLE */  
+
+    .section-title {  
+        text-align: center;  
+
+        color: #a40000;  
+
+        font-size: 30px;  
+
+        margin: 15px 0 25px;  
+    }  
+
+
+    /* GRID */  
+
+    .grid {  
+        display: grid;  
+
+        grid-template-columns:  
+            repeat(  
+                auto-fit,  
+                minmax(200px, 1fr)  
+            );  
+
+        gap: 18px;  
+    }  
+
+
+    /* CARD */  
+
+    .card {  
+        background: white;  
+
+        border-radius: 16px;  
+
+        padding: 22px;  
+
+        box-shadow:  
+            0 5px 18px  
+            rgba(0, 0, 0, 0.08);  
+
+        text-align: center;  
+
+        transition: 0.3s;  
+    }  
+
+
+    .card:hover {  
+        transform: translateY(-5px);  
+
+        box-shadow:  
+            0 10px 25px  
+            rgba(0, 0, 0, 0.12);  
+    }  
+
+
+    /* BLOOD GROUP */  
+
+    .blood {  
+        font-size: 30px;  
+
+        font-weight: bold;  
+
+        color: #c1121f;  
+
+        margin-bottom: 8px;  
+    }  
+
+
+    /* BLOOD LEVEL */  
+
+    .level {  
+        text-align: left;  
+    }  
+
+
+    .level h3 {  
+        color: #a40000;  
+
+        margin-bottom: 6px;  
+    }  
+
+
+    /* PAYMENT BOX */  
+
+    .pay {  
+        margin: 45px auto;  
+
+        background: white;  
+
+        border-radius: 20px;  
+
+        padding: 35px;  
+
+        text-align: center;  
+
+        max-width: 650px;  
+
+        box-shadow:  
+            0 8px 25px  
+            rgba(0, 0, 0, 0.10);  
+    }  
+
+
+    .pay h2 {  
+        font-size: 28px;  
+
+        color: #a40000;  
+
+        margin-bottom: 10px;  
+    }  
+
+
+    .price {  
+        font-size: 38px;  
+
+        font-weight: bold;  
+
+        margin: 15px;  
+
+        color: #222;  
+    }  
+
+
+    /* RAZORPAY */  
+
+    .razorpay-area {  
+        margin-top: 20px;  
+
+        display: flex;  
+
+        justify-content: center;  
+
+        align-items: center;  
+    }  
+
+
+    .note {  
+        font-size: 13px;  
+
+        color: #666;  
+
+        margin-top: 15px;  
+    }  
+
+
+    /* MEDICAL WARNING */  
+
+    .warning {  
+        background: #fff3cd;  
+
+        border-left:  
+            5px solid #ffc107;  
+
+        padding: 15px;  
+
+        margin-top: 25px;  
+
+        border-radius: 8px;  
+
+        font-size: 14px;  
+    }  
+
+
+    /* FOOTER */  
+
+    footer {  
+        background: #222;  
+
+        color: #ddd;  
+
+        text-align: center;  
+
+        padding: 25px;  
+
+        margin-top: 30px;  
+    }  
+
+
+    /* MOBILE */  
+
+    @media (max-width: 600px) {  
+
+        header h1 {  
+            font-size: 32px;  
+        }  
+
+
+        header p {  
+            font-size: 16px;  
+        }  
+
+
+        .section-title {  
+            font-size: 25px;  
+        }  
+
+
+        .pay {  
+            padding: 25px 15px;  
+        }  
+
+
+        .price {  
+            font-size: 34px;  
+        }  
+
+    }  
+
+</style>
+
+</head>  <body>  <!-- =========================  
+     HEADER  
+========================== -->  
+
+<header>  
+
+    <h1>  
+        🩸 BloodCare  
+    </h1>  
+
+    <p>  
+        Simple Blood Group & Blood Level Information  
+    </p>  
+
+</header>  
+
+
+
+<!-- =========================  
+     MAIN CONTENT  
+========================== -->  
+
+<main class="container">  
+
+
+    <!-- BLOOD GROUPS -->  
+
+    <h2 class="section-title">  
+        Blood Groups  
+    </h2>  
+
+
+    <div class="grid">  
+
+
+        <div class="card">  
+
+            <div class="blood">  
+                A+  
+            </div>  
+
+            <p>  
+                Common blood group  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card">  
+
+            <div class="blood">  
+                A−  
+            </div>  
+
+            <p>  
+                Rh-negative blood group  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card">  
+
+            <div class="blood">  
+                B+  
+            </div>  
+
+            <p>  
+                Common blood group  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card">  
+
+            <div class="blood">  
+                B−  
+            </div>  
+
+            <p>  
+                Rh-negative blood group  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card">  
+
+            <div class="blood">  
+                AB+  
+            </div>  
+
+            <p>  
+                Universal red-cell recipient  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card">  
+
+            <div class="blood">  
+                AB−  
+            </div>  
+
+            <p>  
+                Rare blood group  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card">  
+
+            <div class="blood">  
+                O+  
+            </div>  
+
+            <p>  
+                Common blood group  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card">  
+
+            <div class="blood">  
+                O−  
+            </div>  
+
+            <p>  
+                Universal red-cell donor  
+            </p>  
+
+        </div>  
+
+
+    </div>  
+
+
+
+    <!-- =========================  
+         BLOOD LEVELS  
+    ========================== -->  
+
+    <h2  
+        class="section-title"  
+        style="margin-top:50px;"  
+    >  
+        Basic Blood Levels  
+    </h2>  
+
+
+    <div class="grid">  
+
+
+        <div class="card level">  
+
+            <h3>  
+                Hemoglobin  
+            </h3>  
+
+            <p>  
+                Hemoglobin helps carry  
+                oxygen throughout the body.  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card level">  
+
+            <h3>  
+                RBC  
+            </h3>  
+
+            <p>  
+                Red blood cells carry oxygen  
+                from the lungs to body tissues.  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card level">  
+
+            <h3>  
+                WBC  
+            </h3>  
+
+            <p>  
+                White blood cells are part  
+                of the immune system.  
+            </p>  
+
+        </div>  
+
+
+
+        <div class="card level">  
+
+            <h3>  
+                Platelets  
+            </h3>  
+
+            <p>  
+                Platelets help blood clot  
+                and stop bleeding.  
+            </p>  
+
+        </div>  
+
+
+    </div>  
+
+
+
+    <!-- =========================  
+         RAZORPAY PAYMENT  
+    ========================== -->  
+
+    <div class="pay">  
+
+
+        <h2>  
+            Get Detailed Blood Guide  
+        </h2>  
+
+
+        <p>  
+            Get our simple guide covering  
+            blood groups and blood-test terms.  
+        </p>  
+
+
+        <div class="price">  
+            ₹99  
+        </div>  
+
+
+
+        <!--  
+        ==========================================  
+             RAZORPAY PAYMENT BUTTON  
+        ==========================================  
+
+        Your Razorpay Payment Button ID:  
+
+        pl_TkXzOsG4i7LDWx  
+
+        ==========================================  
+        -->  
+
+
+        <div class="razorpay-area">  
+
+
+            <form>  
+
+                <script  
+                    src="https://checkout.razorpay.com/v1/payment-button.js"  
+
+                    data-payment_button_id="pl_TkXzOsG4i7LDWx"  
+
+                    async>  
+                </script>  
+
+            </form>  
+
+
+        </div>  
+
+
+        <p class="note">  
+
+            🔒 Secure payment powered by Razorpay  
+
+        </p>  
+
+
+    </div>  
+
+
+
+    <!-- =========================  
+         MEDICAL DISCLAIMER  
+    ========================== -->  
+
+    <div class="warning">  
+
+        <strong>  
+            Medical Note:  
+        </strong>  
+
+        This website provides general  
+        educational information only.  
+
+        Blood-test results should be interpreted  
+        by a qualified healthcare professional.  
+
+    </div>  
+
+
+</main>  
+
+
+
+<!-- =========================  
+     FOOTER  
+========================== -->  
+
+<footer>  
+
+    © 2026 BloodCare  
+
+    <br>  
+
+    General Educational Information  
+
+</footer>
+
+</body>  </html>
